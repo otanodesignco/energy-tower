@@ -7,6 +7,7 @@ in vec2 vUv;
 
 #include ../uv/polarCoords.glsl
 #include ../uv/uvPan.glsl
+#include ../util/colorBanding.glsl
 
 void main()
 {
@@ -47,6 +48,8 @@ void main()
 
     vec3 color = uColor1;
     color = mix( uColor2, color * 1.8, noise );
+
+    color = colorBanding( color, 4.0, 0 );
 
     vec4 colorFinal = vec4( color, mask * maskInner );
 
