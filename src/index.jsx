@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
 import Experience from './Experience.jsx'
 import { Bloom, EffectComposer } from '@react-three/postprocessing'
-import { OrbitControls } from '@react-three/drei'
 
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))
@@ -20,8 +19,6 @@ root.render(
         } }
         shadows
     >   
-
-        <OrbitControls makeDefault />
         <EffectComposer>
             <Bloom
                 luminanceThreshold={ 0.5 }
